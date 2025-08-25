@@ -1,0 +1,21 @@
+# Sistema operacional
+.DS_Store       # macOS
+Thumbs.db       # Windows
+desktop.ini     # Windows
+
+# Logs do sistema
+*.log
+
+# Arquivos temporários do editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Arquivos de build temporários (se usar alguma ferramenta depois)
+dist/
+build/
+
+# Arquivos de cache do navegador ou servidor
+.cache/
