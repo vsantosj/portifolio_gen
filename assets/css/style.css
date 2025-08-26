@@ -186,7 +186,7 @@ form span {
 }
 
 
-.article_mapa {
+.container_map {
     display: flex;
     flex-direction: column;
     justify-content: center;
