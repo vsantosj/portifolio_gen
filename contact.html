@@ -13,17 +13,17 @@
 </head>
 
 <body>
-    <header>
+    <header class="flex between">
         <h1>Entre em Contato</h1>
         <nav>
-            <ul>
+            <ul class="flex">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="contact.html">Contato</a></li>
             </ul>
         </nav>
     </header>
     <main class="main_contact">
-        <form action="#" method="submit" id="form">
+        <form action="#" method="submit" id="form" class="flex">
             <label for="name">Nome: </label>
             <input type="text" name="name" id="name" placeholder="Digite seu nome">
             <span id="errNome"></span>
@@ -34,7 +34,7 @@
 
 
             <label for="subject">Assunto</label>
-            <input type="text" name="subject" id="email" placeholder="Digite o assunto da mensagem">
+            <input type="text" name="subject" id="subject" placeholder="Digite o assunto da mensagem">
             <span id="errSubject"></span>
 
             <label for="message">Mensagem: </label>
@@ -58,7 +58,7 @@
         </article>
     </main>
     <footer>
-        <section>
+        <section class="flex center">
             <a href="https://www.linkedin.com/in/vsantosj/" target="_blank">
                 <img src="./assets/img/linkedin.svg" alt="Linkedin Viviane Santos">
             </a>
