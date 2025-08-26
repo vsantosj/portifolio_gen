@@ -197,14 +197,14 @@ form span {
     border-radius: 0.75rem;
 }
 
-.article_mapa address {
+.container_map address {
     width: 75%;
 }
 
-.article_mapa address p {
+.container_map address p {
     font-weight: 600;
 }
 
-.article_mapa iframe {
+.container_map iframe {
     align-self: center;
 }
