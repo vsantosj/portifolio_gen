@@ -1,23 +1,46 @@
+const form = document.getElementById('form');
+
 const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 
-formulario.addEventListener('submit', function (event) {
-    event.preventDefault();
+function checkName(name) {
+    let fullName = name.trim().split(' ');
+    return fullName.length >= 2;
+}
 
-    const campoNome = document.querySelector('#name');
+
+function validateEmail(email) {
+    return emailRegex.test(email);
+}
+
+
+function clearForm() {
+    document.getElementById('name').value = '';
+    document.getElementById('email').value = '';
+    document.getElementById('subject').value = '';
+    document.getElementById('message').value = '';
+    document.querySelector('#errNome').innerHTML = '';
+    document.querySelector('#errEmail').innerHTML = '';
+    document.querySelector('#errSubject').innerHTML = '';
+}
+
+form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const inputName = document.getElementById('name');
     const errNome = document.querySelector('#errNome');
 
-    if (campoNome.value.length < 3) {
-        errNome.innerHTML = 'O Nome deve ter no mínimo 3 caracteres.';
-        campoNome.focus();
+    if (!checkName(inputName.value)) {
+        errNome.innerHTML = 'Insira Nome e Sobrenome.';
+        inputName.focus();
         return;
     } else {
         errNome.innerHTML = '';
     }
 
-    const campoEmail = document.querySelector('#email');
+    const inputEmail = document.getElementById('email');
     const errEmail = document.querySelector('#errEmail');
 
-    if (!campoEmail.value.match(emailRegex)) {
+    if (!validateEmail(inputEmail.value)) {
         errEmail.innerHTML = 'Digite um E-mail Válido.';
         campoEmail.focus();
         return;
@@ -25,23 +48,20 @@ formulario.addEventListener('submit', function (event) {
         errEmail.innerHTML = '';
     }
 
-    const campoSubject = document.querySelector('#subject');
+    const inputSubject = document.querySelector('#subject');
     const errSubject = document.querySelector('#errSubject');
 
-    if (campoSubject.value.length < 5) {
+    if (inputSubject.value.length < 5) {
         errSubject.innerHTML = 'O Assunto deve ter no mínimo 5 caracteres.';
-        campoSubject.focus();
+        inputSubject.focus();
         return;
     } else {
         errSubject.innerHTML = '';
     }
 
-    const campoMessage = document.querySelector('#message');
+    const sucessMessage = document.querySelector('#success-message');
+    sucessMessage.innerHTML = 'Formulário enviado com sucesso';
+    console.log("enviado");
 
-    window.alert("Formulário Enviado com Sucesso!");
-
-    campoNome.value = '';
-    campoEmail.value = '';
-    campoSubject.value = '';
-    campoMessage.value = '';
+    clearForm();
 });
