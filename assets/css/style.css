@@ -1,4 +1,7 @@
-/* Reset e Variáveis */
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
@@ -10,20 +13,28 @@
     --purple-500: #6b36c8;
     --purple-800: #441f88;
     --black-800: #171717;
-    --gray-200: #cccccc;
+    --backgorund: #cccccc;
     --white: #f9f9f9;
+
+
+    --font-family-main:"Roboto", sans-serif;
 }
 
 body {
-    background: var(--gray-200);
+    height: 100vh;  
+    background: var(--backgorund);
     color: var(--black-800);
-    font-family: sans-serif;
+    font-family:var(--font-family-main) ;
 }
 
 .flex {
     display: flex;
 }
 
+.column{
+    flex-direction: column;
+    align-items: center;
+}
 .center {
     justify-content: center;
     align-items: center;
@@ -62,6 +73,7 @@ p {
     font-size: 1rem;
     line-height: 1.5rem;
     text-align: justify;
+    margin-bottom: 0.5rem;
 }
 
 
@@ -97,13 +109,17 @@ nav a:hover {
 
 #about article {
 
-    align-items: center;
+    align-items: center;    
     gap: 2rem;
 }
 
-#about img {
-    width: 200px;
+.img-main {
+    width: 20%;
     flex-shrink: 0;
+}
+
+.about-content{
+    width: 60%;
 }
 
 #about p {
@@ -207,4 +223,25 @@ form span {
 
 .container_map iframe {
     align-self: center;
+}
+
+
+@media only screen and (max-width: 1000px) {
+    .about{
+        flex-direction: column;
+    }
+    h1{
+        font-size: 1.5rem;
+    }
+    h2{
+        display: flex;
+        justify-content: center;
+        font-size: 2rem;
+    }
+
+    .main_contact{
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
 }
